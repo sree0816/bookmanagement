@@ -29,3 +29,9 @@ def single_book(request,bid):
     book=BookDB.objects.get(id=bid)
     categories=CategoryDB.objects.all()
     return render(request,'single_book.html',{'book':book,'categories':categories})
+
+def sign_in(request):
+    return render(request,'sign_in.html')
+
+def sign_up(request):
+    return render(request,'sign_up.html')

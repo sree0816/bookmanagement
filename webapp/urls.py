@@ -7,4 +7,7 @@ urlpatterns=[path('home/',views.home,name='home'),
              path('contact/',views.contact,name='contact'),
              path('checkout/',views.checkout,name='checkout'),
              path('filtered/<cat>/',views.filtered,name='filtered'),
-             path('single_book/<int:bid>',views.single_book,name='single_book')]
+             path('single_book/<int:bid>',views.single_book,name='single_book'),
+             path('sign_in/',views.sign_in,name='sign_in'),
+             path('sign_up/',views.sign_up,name='sign_up'),
+             ]
