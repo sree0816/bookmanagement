@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 class="text-center mt-5" style="padding-top:100px;"> add category</h1>
+<div class="card-body" style="width:50%;margin:50px 25%;">
+    <div class="basic-form">
+        <form method="POST" action="{% url 'save_category' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="name" name="cname">
+                </div>
+            </div>
+            <div class="card" style="margin-left:120px;">
+                            <div class="card-header">
+                                <h4 class="card-title">Description</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="basic-form">
+
+                                        <div class="form-group">
+                                            <textarea class="form-control" rows="4" id="comment" name="cdesc"></textarea>
+                                        </div>
+
+                                </div>
+                            </div>
+                        </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Cover image</label>
+                <div class="col-sm-10">
+                    <input type="file" class="form-control" placeholder="image" name="ccoverimage">
+                </div>
+            </div>
+            <div class="form-group row" style="margin-left:40%;">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}
