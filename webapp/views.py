@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from adminapp.models import CategoryDB, BookDB
+from webapp.models import SignupDB
 
 
 # Create your views here.
@@ -35,3 +36,14 @@ def sign_in(request):
 
 def sign_up(request):
     return render(request,'sign_up.html')
+
+def save_signup(request):
+    if request.method=='POST':
+        n=request.POST.get('username')
+        e=request.POST.get('email')
+        p=request.POST.get('password')
+        c=request.POST.get('confirmpass')
+        m=request.POST.get('mobile')
+        obj=SignupDB(name=n,email=e,password=p,confirmpass=c,mobile=m)
+        obj.save()
+    return redirect(sign_in)

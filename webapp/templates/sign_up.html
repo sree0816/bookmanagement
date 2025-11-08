@@ -86,22 +86,30 @@
 <body>
     <div class="signin-container">
         <h2>Sign Up</h2>
-        <form>
+        <form method="POST" action="{% url 'save_signup' %}">
+            {% csrf_token %}
             <div class="input-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="Enter username" required>
             </div>
             <div class="input-group">
-                <label for="mail">Username</label>
+                <label for="mail">Email</label>
                 <input type="email"  name="email" placeholder="Enter your mail" required>
+            </div>
+            <div class="input-group">
+                <label for="mobile">mobile no:</label>
+                <input type="text"  name="mobile" placeholder="Enter your mobile no" required>
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter password" required>
             </div>
-            <button type="submit" class="signin-button">Sign In</button>
+            <div class="input-group">
+                <label for="password"> Confirm Password</label>
+                <input type="password"  name="confirmpass" placeholder="confirm password" required>
+            </div>
+            <button type="submit" class="signin-button">Sign up</button>
         </form>
-        <div class="small-text">Forgot your password?</div>
     </div>
 </body>
 </html>
