@@ -50,8 +50,13 @@
 					</div>
 					<div class="col-md-6">
 						<div class="right-element">
+							{% if request.session.name %}
+							<a href="{% url 'user_logout' %}" class="user-account for-buy"><i
+									class="icon icon-user"></i><span> Welcome {{request.session.name}}/ Logout</span></a>
+							{% else %}
 							<a href="{% url 'sign_in' %}" class="user-account for-buy"><i
 									class="icon icon-user"></i><span>sign In</span></a>
+							{% endif %}
 							<a href="#" class="cart for-buy"><i class="icon icon-clipboard"></i><span>Cart:(0
 									$)</span></a>
 

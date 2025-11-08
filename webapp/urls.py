@@ -10,4 +10,8 @@ urlpatterns=[path('home/',views.home,name='home'),
              path('single_book/<int:bid>',views.single_book,name='single_book'),
              path('sign_in/',views.sign_in,name='sign_in'),
              path('sign_up/',views.sign_up,name='sign_up'),
-             path('save_signup/',views.save_signup,name='save_signup')]
+             path('save_signup/',views.save_signup,name='save_signup'),
+             path('user_login/',views.user_login,name='user_login'),
+             path('user_logout/', views.user_logout, name='user_logout'),
+
+             ]

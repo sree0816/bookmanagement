@@ -47,3 +47,21 @@ def save_signup(request):
         obj=SignupDB(name=n,email=e,password=p,confirmpass=c,mobile=m)
         obj.save()
     return redirect(sign_in)
+def user_login(request):
+    if request.method=='POST':
+        n=request.POST.get('username')
+        p=request.POST.get('password')
+        if SignupDB.objects.filter(name=n,password=p).exists():
+            request.session['name']=n
+            request.session['password']=p
+            return redirect(home)
+        else:
+            return redirect(sign_in)
+    else:
+        return redirect(sign_in)
+
+def user_logout(request):
+    del request.session['name']
+    del request.session['password']
+    return redirect(sign_in)
+
