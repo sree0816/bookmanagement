@@ -4,11 +4,6 @@ from django.utils.datastructures import MultiValueDictKeyError
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login
 import datetime
-
-
-# Create your views here.
-
-
 from adminapp.models import CategoryDB, BookDB
 
 
