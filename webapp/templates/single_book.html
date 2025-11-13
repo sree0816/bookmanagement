@@ -151,14 +151,20 @@
 
 								<div class="products-content">
 									<div class="author-name">{{ book.author}}</div>
-									<h3 class="item-title">{{ book.name }}</h3>
+									<h3 class="item-title">{{ book.title }}</h3>
 									<p>{{book.description}}</p>
 									<div class="item-price">Rs {{ book.price }}</div>
 
                                   <div>
                                     <form>
                                       <div class="mt-2 mb-2"><input type="number" class="form-control" name="quantity" placeholder="quantity"></div>
-                                      <div class="mb-2"><label type="number"  name="quantity" placeholder="quantity">total price:</label></div>
+                                      <div class="mb-2"><input type="text"  class="form-control"  name="total_price" placeholder="total_price"></div>
+                                      <div class="mb-2"><input type="hidden"  class="form-control"  name="bookname" placeholder="bookname" value="{{ book.title }}"></div>
+                                      <div class="mb-2"><input type="hidden" class="form-control"   name="price" placeholder="price" value="{{ book.price }}"></div>
+                                      <div class="mb-2"><input type="hidden"  class="form-control"   name="username" placeholder="username" value="{{request.session.name}}"></div>
+
+
+
 
                                       <div class="btn-wrap">
 										  {% if request.session.name %}
