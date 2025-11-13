@@ -155,9 +155,11 @@
 							<div>
 							<h1 class="banner-title" style="padding:50px 75px;">Get in Touch..</h1>
 
-								<form>
+								<form method="POST" action="{% url 'save_message' %}">
+									{% csrf_token %}
 									<div class="mt-2 mb-2"><input class="form-control" type="text" placeholder="name" name="name"></div>
 									<div class="mt-2 mb-2"><input class="form-control" type="mail" placeholder="mail@gmail.com" name="mail"></div>
+									<div class="mt-2 mb-2"><input class="form-control" type="text" placeholder="subject" name="subject"></div>
 									<div class="mt-2 mb-2"><textarea class="form-control" type="textarea" placeholder="message" name="message"></textarea></div>
 									<button class="text-center mt-3 " type="submit" style="margin-left:35%;border-radius:10%;height:35px;">Submit</button>
 								</form>

@@ -159,16 +159,19 @@
 
 								<div class="col-md-3">
 									<div class="product-item">
-										<figure class="product-style">
-											<img src="{{ i.coverimage.url }}" alt="Books" class="product-item">
+										<figure class="product-style" style="height:500px;">
+											<img src="{{ i.coverimage.url }}" alt="Books" class="product-item" style="height:400px;">
 											<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to
 												Cart</button>
+
 										</figure>
-										<figcaption>
+										<figcaption style="height:300px;">
+											<div style="height:200px;">
 											<h3>{{ i.title }}</h3>
 											<span>{{ i.author }}</span>
 											<div class="item-price">Rs {{ i.price }}</div>
-											<a href="{% url 'single_book' bid=i.id %}"><button class="btn btn-success">View More</button></a>
+											<a href="{% url 'single_book' bid=i.id %}"><button class="btn btn-success" style="height:50px;">View More</button></a>
+												</div>
 
 										</figcaption>
 									</div>

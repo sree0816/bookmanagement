@@ -15,4 +15,6 @@ urlpatterns=[path('index/',views.index,name='index'),
              path('update_book/<int:bid>',views.update_book,name='update_book'),
              path('loginpage/',views.loginpage,name='loginpage'),
              path('admin_login/',views.admin_login,name='admin_login'),
-             path('admin_logout/',views.admin_logout,name='admin_logout')]
+             path('admin_logout/',views.admin_logout,name='admin_logout'),
+             path('view_messages/',views.view_messages,name='view_messages'),
+             path('delete_message/<int:mid>',views.delete_message,name='delete_message')]

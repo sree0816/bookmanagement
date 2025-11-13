@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from adminapp.models import CategoryDB, BookDB
-from webapp.models import SignupDB
+from webapp.models import SignupDB, ContactDB
 
 
 # Create your views here.
@@ -64,4 +64,14 @@ def user_logout(request):
     del request.session['name']
     del request.session['password']
     return redirect(sign_in)
+
+def save_message(request):
+    if request.method=='POST':
+        n=request.POST.get('name')
+        m=request.POST.get('mail')
+        s=request.POST.get('subject')
+        message=request.POST.get('message')
+        obj=ContactDB(name=n,email=m,subject=s,message=message)
+        obj.save()
+    return redirect(contact)
 

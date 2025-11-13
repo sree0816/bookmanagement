@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login
 import datetime
 from adminapp.models import CategoryDB, BookDB
+from webapp.models import ContactDB
 
 
 # Create your views here.
@@ -111,3 +112,11 @@ def admin_logout(request):
     del request.session['username']
     del request.session['password']
     return redirect(loginpage)
+
+def view_messages(request):
+     data=ContactDB.objects.all()
+     return render(request,'view_messages.html',{'data':data})
+def delete_message(request,mid):
+    data=ContactDB.objects.get(id=mid)
+    data.delete()
+    return redirect(view_messages)
