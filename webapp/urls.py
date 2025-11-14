@@ -13,6 +13,7 @@ urlpatterns=[path('home/',views.home,name='home'),
              path('save_signup/',views.save_signup,name='save_signup'),
              path('user_login/',views.user_login,name='user_login'),
              path('user_logout/', views.user_logout, name='user_logout'),
-             path('save_message/',views.save_message,name='save_message')
+             path('save_message/',views.save_message,name='save_message'),
+             path('cart/',views.cart,name='cart')
 
              ]

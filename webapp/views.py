@@ -75,3 +75,6 @@ def save_message(request):
         obj.save()
     return redirect(contact)
 
+def cart(request):
+    return render(request,'cart.html')
+
